@@ -40,7 +40,7 @@ Before my experiment, I was curious if using dropout might help the model genera
 - 99.31% F1 score for WBC
 - 70.59% F1 score for Platelets
 - Hamming loss: 0.1416
-- Confusion matrix: ![Confusion Matrix 1]([path_to_cm_1_image](https://github.com/saeahgo/blood-cell-detection/blob/main/cm_b.png))
+- Confusion matrix: ![Confusion Matrix 1]([https://github.com/saeahgo/blood-cell-detection/blob/main/cm_b.png](https://github.com/saeahgo/blood-cell-detection/blob/main/cm_b.png?raw=true))
 
 We observe that the model classifies RBC and WBC pretty well, but struggles a bit with classifying Platelet.
 
