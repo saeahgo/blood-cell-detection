@@ -50,7 +50,7 @@ For the next stage, I still used dropout, but reduced the dropout percentage fro
 - 99.31% F1 score for WBC
 - 75.56% F1 score for Platelets
 - Hamming loss: 0.1324
-- Confusion matrix: ![Confusion Matrix 2](path_to_cm_2_image)
+- Confusion matrix: ![Confusion Matrix 2](cm_c.png)
 
 Even though the F1 score for Platelet has some improvements (~5% increase), it doesn't show a huge improvement in terms of the confusion matrix. So, I searched why and found out that when the dataset is relatively small or simple, dropout might unnecessarily reduce the capacity of the model during training. Since our dataset only includes ~400 images, it is small, and I decided to remove the dropout layer.
 
@@ -60,7 +60,7 @@ So, I removed the dropout layer and ran the model again. With that, I got:
 - 99.31% F1 score for WBC
 - 82% F1 score for Platelets
 - Hamming loss: 0.0959
-- Confusion matrix: ![Confusion Matrix 3](path_to_cm_3_image)
+- Confusion matrix: ![Confusion Matrix 3](cm_a.png)
 
 Without the dropout layer, the model improves significantly. Not only did the F1 score for Platelets improve, but also the confusion matrix. There were 18, 19 False Positive (FP) cases for Platelets (even though images didn't have Platelets, the model predicted we did). But now, without the dropout layer, the number of FP cases reduced to 9. Still some, but much better results.
 
@@ -70,7 +70,7 @@ I wanted to check if the 0.5 threshold for output (if the output is greater than
 - 99.31% F1 score for WBC
 - 71.05% F1 score for Platelet
 - Hamming loss: 0.1370
-- Confusion matrix: ![Confusion Matrix 4](path_to_cm_4_image)
+- Confusion matrix: ![Confusion Matrix 4](cm_d.png)
 
 Compared to the 0.5 threshold, the 0.7 threshold did not improve the model's performance.
 
@@ -80,7 +80,7 @@ I also tried a 0.3 threshold and got:
 - 99.31% F1 score for WBC
 - 73.56% F1 score for Platelets
 - Hamming loss: 0.1279
-- Confusion matrix: ![Confusion Matrix 5](path_to_cm_5_image)
+- Confusion matrix: ![Confusion Matrix 5](cm_e.png)
 
 The 0.3 threshold did not show improvement compared to the 0.5 threshold, so the best model parameters are when using the 0.5 threshold for output.
 
